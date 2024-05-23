@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şifre Girişi</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        #password-container {
+            text-align: center;
+        }
+
+        #password-input {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #password-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #password-button:hover {
+            background-color: #ff79a6;
+        }
+
+        #password-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="password-container">
+        <input type="password" id="password-input" placeholder="Şifreyi girin">
+        <button id="password-button">Giriş</button>
+        <p id="password-message"></p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const correctPassword = "ZekmenKayd2805"; // Burada istediğiniz şifreyi belirleyin
+            const passwordInput = document.getElementById('password-input');
+            const passwordButton = document.getElementById('password-button');
+            const passwordMessage = document.getElementById('password-message');
+
+            passwordButton.addEventListener('click', () => {
+                if (passwordInput.value === correctPassword) {
+                    window.location.href = 'main.html'; // Doğru şifre girilirse yönlendir
+                } else {
+                    passwordMessage.textContent = 'Yanlış şifre. Tekrar deneyin.';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
